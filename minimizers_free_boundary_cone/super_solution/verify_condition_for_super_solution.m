@@ -1,6 +1,18 @@
 function verify_condition_for_super_solution(t,beta,zk, ...
     cf_legendre,mu,g0_grid,h0_grid)
 
+% =================================================================
+%Purpose of the function:
+%verify the inequality given in Lemma 5.1 (1)
+% Parameters:
+% t: independant variable
+% beta: independant variable
+% zk: coefficients of f
+% mu: constant variable
+% cf_legendre: function that produce legendre basis
+% g0_grid: function g
+% h0_grid: function h
+% =================================================================
 
 
 % make sure that beta is a column vector

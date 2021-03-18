@@ -1,5 +1,14 @@
 function out = f_der_der_fun(t,beta,N,one,err)
-
+% =================================================================
+%Purpose of the function:
+%evaluate the second derivative of function f
+% Parameters:
+% t: independent variable
+% beta: independent variable
+% N: number of terms for the power series
+% one: option to use double arithmetic and interval arithmetic
+% err: values to evaluate
+% =================================================================
 [stx,sty] = size(t);
 if sty > stx % make t a column vector
    t = t.';

@@ -1,4 +1,17 @@
 function verify_unique_cross_point(R,Y,beta,zk_standard,cf_legendre_standard_basis)
+% =================================================================
+%Purpose of the function:
+%verify the inequality given in Lemma 5.1 (3)
+% Parameters:
+% file_name (string): Data is saved as "verified_" concatenated with file_name.
+% c_int (2x1 array of intervals): Contains two intervals, the left and right
+% end point of the interval of c-values that will be verified.
+% small_interval (interval): The cross point will be rigorously verified by
+% initializing interval Newton's method with an approximation of the cross
+% point plus the small_interval. 
+% zk_data (array of intervals): The coefficients for M.
+% zf (structure): The structure that contains data about the zeros of f.
+% =================================================================
 
 iv_fun = @(x)iv(x);
 

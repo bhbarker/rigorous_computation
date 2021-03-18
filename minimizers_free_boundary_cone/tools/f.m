@@ -1,4 +1,14 @@
 function out = f(t,beta,N,one,err)
+% =================================================================
+%Purpose of the function:
+%evaluate function f
+% Parameters:
+% t: independent variable
+% beta: independent variable
+% N: number of terms for the power series
+% one: option to use double arithmetic and interval arithmetic
+% err: values to evaluate
+% =================================================================
 
 [stx,sty] = size(t);
 if sty > stx % make t a column vector
@@ -10,6 +20,7 @@ if sty > stx % make beta a column vector
    beta = beta.';
 end
 
+%Power series of f round (1-t)
 half = one/2;
 u = 1-t;
 

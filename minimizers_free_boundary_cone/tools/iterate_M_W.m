@@ -1,5 +1,13 @@
 function [X,Y] = iterate_M_W(x,y,beta,mu,h0_fun,g0_fun,h0_fun_der,g0_fun_der,iv_fun,zk_standard,cf_legendre_standard_basis)
-
+% =================================================================
+%Purpose of the function:
+% find the cross point of function W and M on the zero level, that is find
+% (x_0, y_0) such that W(x0,y0) = W(x_0,y_0) = 0
+% Parameters:
+% x: independent variable
+% y: independent variable
+% the rest are essential variables andd functions to evaluate M and W
+% =================================================================
 
 
 [M,M_x,M_y] = M_fun(x,y,beta,zk_standard,cf_legendre_standard_basis,iv_fun); 

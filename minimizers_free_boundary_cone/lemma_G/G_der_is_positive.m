@@ -1,6 +1,18 @@
 function success = G_der_is_positive(G_der_poly,a_beta,b_beta,nodes_beta,a_t,b_t,nodes_t)
+% =================================================================
+%Purpose of the function:
+% verifies the inequality given by (4.6)
 
-
+% Parameters:
+% G_der_poly: the class that contains information about rigorous
+% calculation of G'
+% a_beta: lower bound of beta
+% b_beta: upper bound of beta
+% nodes_beta: number of nodes for interpolation with respect to beta
+% a_beta: lower bound of t
+% b_beta: upper bound of t
+% nodes_t: number of nodes for interpolation with respect to t
+% =================================================================
 
 % create a subgrid of intrevals on which to verify sign of g^3G'
 y = linspace(a_beta,b_beta,nodes_beta);

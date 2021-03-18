@@ -1,17 +1,16 @@
 function cf = legendre_polys(N,make_rigorous)
+% =================================================================
+%Purpose of the function:
+%   each row corresponds to the coefficints of the Legendre polynomial 
+%   in the standard basis centered at x = 0.
+%     
+%   For example, legendre_polys(3) returns [[1,0,0],[0,1,0],[-0.5,0, 1.5]]
 
-    %{
-    N > 2
-    each row corresponds to the coefficints of the Legendre polynomial 
-    in the standard basis centered at x = 0.
-    
-    For example, legendre_polys(3) returns [[1,0,0],[0,1,0],[-0.5,0, 1.5]]
+% Parameters:
+% N: number of legendre polynomial
+% make_rigorous: option for double or interval arithmetic
+% =================================================================
 
-    %}
-
-    
-    
-    
     if strcmp(make_rigorous,'on')
         cf = iv(zeros(N,N));
         cf(1,1) = iv(1); % first Legendre polynomial

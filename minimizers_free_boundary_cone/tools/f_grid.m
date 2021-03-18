@@ -1,5 +1,14 @@
 function fun = f_grid(beta,t,N,one,err)
-
+% =================================================================
+%Purpose of the function:
+%evaluate function f as an output of matrices
+% Parameters:
+% t: independent variable
+% beta: independent variable
+% N: number of terms for the power series
+% one: option to use double arithmetic and interval arithmetic
+% err: values to evaluate
+% =================================================================
 if size(beta,2) > 1
     beta = beta.';
 end

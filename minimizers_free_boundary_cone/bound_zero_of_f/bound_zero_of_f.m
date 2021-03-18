@@ -107,7 +107,7 @@ r = max(abs(1-t_upper),abs(1-t_lower));
 f_err = 2*(r/2)^num_terms/(1-(r/2));
 f_err = iv(-f_err,f_err);
 
-% degree of 
+% degree of polynomial
 N_x = N*num_terms;
 
 % new points

@@ -1,6 +1,15 @@
 function [fun,fun_der] = f_newton(t,beta,N,one)
 
-
+% =================================================================
+%Purpose of the function:
+%return the function f and its derivative for newton's method.
+% Parameters:
+% t: independent variable
+% beta: independent variable
+% N: number of terms for the power series
+% one: option to use double arithmetic and interval arithmetic
+% err: values to evaluate
+% =================================================================
 half = one/2;
 u = 1-t;
 

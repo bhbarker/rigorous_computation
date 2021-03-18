@@ -1,6 +1,16 @@
 function [h0_fun_der,h0_fun,h0_grid] = f_and_h(zf,iv_fun,a_t,b_t,rho_beta,rho_t)
 
-
+% =================================================================
+%Purpose of the function:
+%calculate function h0  and h0' based on f
+% Parameters:
+% zf: coefficients of f in legendre basis
+% iv_fun: whether or not to use interval arithmetic 
+% a_t: left end point of the desired interval
+% b_t: right end point of the desired interval
+% rho_beta: parameter for beta error estimation
+% rho_t: parameter for t error estimation
+% =================================================================
 
 
 cf_standard = standard_basis_from_chebyshev(zf.cf_p,iv_fun);

@@ -1,5 +1,14 @@
 function out = h_grid(beta,t,f_fun,f_der_fun,x0_fun,err)
-
+% =================================================================
+%Purpose of the function:
+%evaluate function h as an output of matrices
+% Parameters:
+% t: independent variable
+% beta: independent variable
+% f_fun: function f
+% f_der_fun: function f'
+% err: values to evaluate
+% =================================================================
 if size(beta,2) > 1
     beta = beta.';
 end

@@ -1,8 +1,12 @@
 function out = iv(num1,num2)
-% function out = iv(num)
-%
-% returns a mathematically rigorous enclosure of the number of interval
-% given.
+% =================================================================
+%Purpose of the function:
+% returns a mathematically rigorous enclosure of the number of interval given.
+% Parameters:
+% num1: lower bound
+% num2: upper bound
+% =================================================================
+
 
 if nargin == 1
     out = intval(num1);

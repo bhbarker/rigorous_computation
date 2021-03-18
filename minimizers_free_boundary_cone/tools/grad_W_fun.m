@@ -1,4 +1,17 @@
 function out = grad_W_fun(x,y,beta,mu,h_fun,g_fun,h_fun_der,g_fun_der)
+% =================================================================
+%Purpose of the function:
+%calculate the gradient of W
+% Parameters:
+% x: independent variable
+% y: independent variable
+% beta: independent variable
+% mu: independent variable
+% h_fun: necessary function for calculating the gradient of W
+% g_fun: necessary function for calculating the gradient of W
+% h_fun_der: necessary function for calculating the gradient of W
+% g_fun_der: necessary function for calculating the gradient of W
+% =================================================================
 
 % make sure that x is a column vector
 if size(x,2) > 1
@@ -18,13 +31,10 @@ end
 % one = iv_fun(1);
 
 R = sqrt(x.^2+y.^2);
-% temp_h = h_fun(x./R,beta);
-% temp_g = g_fun(x./R,beta);
 
-% W = R.*temp_h+mu*temp_g./R.^(one/2);
 
 x_r =x./R;
-% y2 = y.^2;
+
 temp_h = h_fun(x_r,beta);
 temp_g = g_fun(x_r,beta);
 

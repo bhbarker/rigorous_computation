@@ -1,16 +1,19 @@
 function verify_super_solution(file_name,c_int,small_interval,zk_data,zf)
-%{
-Takes as input:
- 
-file_name (string) - Data is saved as "verified_" concatenated with file_name.
-c_int (2x1 array of intervals) - Contains two intervals, the left and right
-end point of the interval of c-values that will be verified.
-small_interval (interval) - The cross point will be rigorously verified by
-initializing interval Newton's method with an approximation of the cross
-point plus the small_interval.
-zk_data (array of intervals) - The coefficients for M.
-zf (structure) - The structure that contains data about the zeros of f.
-%}
+
+% =================================================================
+%Purpose of the function:
+%verify Lemma 5.1 
+% Parameters:
+% file_name (string): Data is saved as "verified_" concatenated with file_name.
+% c_int (2x1 array of intervals): Contains two intervals, the left and right
+% end point of the interval of c-values that will be verified.
+% small_interval (interval): The cross point will be rigorously verified by
+% initializing interval Newton's method with an approximation of the cross
+% point plus the small_interval.
+% zk_data (array of intervals): The coefficients for M.
+% zf (structure): The structure that contains data about the zeros of f.
+% =================================================================
+
 
 t_start = tic;
 
@@ -90,13 +93,6 @@ for j = 1:10
     [X,Y] = MW(X,Y);
 end
 
-
-X(1)
-Y(1)
-%                             
-
-% [M,M_x,M_y] = M_fun(X,Y,beta,zk_standard,cf_legendre_standard_basis,iv_fun); 
-% [W,W_x,W_y] = W_fun(X,Y,beta,mu,h0_fun,g0_fun,h0_fun_der,g0_fun_der,iv_fun);
 
 cond1 = grad_W_fun(X,Y,beta,mu,h0_fun,g0_fun,h0_fun_der,g0_fun_der);
 cond2 = grad_M_fun(X,Y,beta,zk_standard,cf_legendre_standard_basis,iv_fun);

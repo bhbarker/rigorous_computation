@@ -1,5 +1,16 @@
 function [g0_fun,g0_fun_der,g0_grid] = interp_g(a_beta,b_beta,a_t,b_t,rho_beta,rho_t)
 
+% =================================================================
+%Purpose of the function:
+%interpolation function g and g' with desired error
+% Parameters:
+% a_beta: lower bound of beta
+% b_beta: upper bound of beta
+% a_t: lower bound of t
+% b_t: upper bound of t
+% rho_t: interpolation variable
+% rho_beta: interpolation variable
+% =================================================================
 
 %{
     Now bound the derivative term.

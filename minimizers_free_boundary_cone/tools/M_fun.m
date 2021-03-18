@@ -1,4 +1,16 @@
 function [M,M_x,M_y] = M_fun(x,y,beta,zk,cf_legendre,iv_fun)
+% =================================================================
+%Purpose of the function:
+%calculate function M
+% Parameters:
+% x: independent variable
+% y: independent variable
+% beta: independent variable
+% zk: coefficients of f
+% cf_legendre: coefficients of legendre polynomial
+% iv_fun: option to use double or interval arithmetic
+% =================================================================
+
 
 % make sure that x is a column vector
 if size(x,2) > 1

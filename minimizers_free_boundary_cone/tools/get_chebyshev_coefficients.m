@@ -1,5 +1,13 @@
 function [cf,fun] = get_chebyshev_coefficients(f,a,b,opt)
-
+% =================================================================
+%Purpose of the function:
+%get the chebyshev_coefficients of function f
+% Parameters:
+% f: evaluated points of f
+% a: left end point of the interval
+% b: right end point of the interval
+% opt: option of methods of interpolation
+% =================================================================
 sz = size(f);
 if length(sz)>2
    error('input must be a vector'); 
@@ -45,16 +53,7 @@ function [out1,out2] = eval_cf(x,cf,cf_x,a_x,b_x)
     out2 = (T*cf_x).';
     
     
-    
-function [f,f_der] = deval(dom,sol)
-
-    % evaluate the profile and its derivative
-    dom_tilde = (2/(sol.a-sol.b))*(dom-0.5*(sol.a+sol.b));
-    theta_dom = acos(dom_tilde);
-    ind = 0:1:sol.N-1;
-    T = cos(theta_dom.'*ind);
-    f = T*sol.cf;
-    f_der = T*sol.der_cf;
+   
 
 
 

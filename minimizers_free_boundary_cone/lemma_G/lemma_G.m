@@ -1,5 +1,9 @@
 commandwindow
 
+% =================================================================
+%Purpose of the function:
+% verifies Theorem 4.1
+% =================================================================
 
 % Prove that G_c'(t) > 0 for t_c <= t < 1
 clc; close all; beep off; clear all
@@ -59,6 +63,8 @@ max_E_rho_beta = max(abs(E_rho_beta));
 
 
 k_beta = ceil(sup(max_E_rho_beta));
+
+
 
 %{
     Find a bound on f(t,beta) on the stadiums
@@ -186,9 +192,8 @@ t = iv(t(1:end-1),t(2:end));
 beta = linspace(1.6,1.61,11);
 beta = iv(beta(1:end-1),beta(2:end));
 temp = G_der_fun(t,beta).';
-% left = inf(temp(1,1));
-% right = sup(temp(1,1));
 
+% This is the interpolation of G_c
 G_der_poly = iv_poly([a_t;a_beta],[b_t;b_beta],G_der_fun,interpolation_error_G, ...
     N_G_t,N_G_beta);
 
@@ -206,6 +211,7 @@ inf(2/(1+iv('0.58')^2)), sup(2/(1+iv('0.588')^2));
 inf(2/(1+iv('0.5')^2)), sup(2/(1+iv('0.58')^2));
 inf(2/(1+iv('0')^2)), sup(2/(1+iv('0.5')^2)) ];
 
+% confirm the Theorem 4.1
 for j = 1:size(beta_vals,1)
     
     confirmed = confirm_G_lemma(G_der_poly,zeros_of_f_structure,...

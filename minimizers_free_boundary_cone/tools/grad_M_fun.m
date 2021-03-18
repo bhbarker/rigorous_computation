@@ -1,4 +1,15 @@
 function out = grad_M_fun(x,y,beta,zk,cf_legendre,iv_fun)
+% =================================================================
+%Purpose of the function:
+%calculate the gradient of M
+% Parameters:
+% x: independent variable
+% y: independent variable
+% beta: independent variable
+% zk: coefficients of f
+% cf_legendre: coefficients of legendre polynomial
+% iv_fun: option to use double or interval arithmetic
+% =================================================================
 
 % make sure that x is a column vector
 if size(x,2) > 1
@@ -24,12 +35,10 @@ bk = (-1 + sqrt(1+(1./beta)*(8*(k+1).*k)))/2; % The powers of R
 
 % The Legendre polynomials
 M = iv_fun(zeros(length(x),1));
-% M_x = iv_fun(zeros(length(x),1));
-% M_y = iv_fun(zeros(length(x),1));
+
 
 R = sqrt(x.^2+y.^2);
-% R_x = x./R;
-% R_y = y./R;
+
 dom = x./R;
 
 sm1 = iv(0);
@@ -50,8 +59,7 @@ for k = 0:N-1
     sm1 = sm1 + temp1;
     sm2 = sm2 + temp2;
 
-%     M_x = M_x + temp1.*R_x + temp2.*(1./R-x.^2./R.^3);
-%     M_y = M_y + temp1.*R_y + temp2.*(-x.*y./R.^3);
+
     
     
 end
